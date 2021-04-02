@@ -1,11 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "9304340a-a4c0-4b71-af10-b8514f2a2449"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-first": {
+    "apppagular": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-first",
+            "outputPath": "dist/apppagular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -46,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -61,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-first:build"
+            "browserTarget": "apppagular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-first:build:production"
+              "browserTarget": "apppagular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-first:build"
+            "browserTarget": "apppagular:build"
           }
         },
         "test": {
@@ -109,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app-first:serve"
+            "devServerTarget": "apppagular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-first:serve:production"
+              "devServerTarget": "apppagular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "app-first"
+  "defaultProject": "apppagular"
 }
